@@ -30,14 +30,8 @@ class Slide {
     public boolean read(BufferedReader bufFinReader)
     // Read a slide from inFile. Returns false at EOF.
     {
+       return false;
 
-        try {
-            BufferedReader bf = new BufferedReader(new FileReader("SLIDES.DAT"));
-            return true;
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-            return false;
-        }
     }
 
 
@@ -89,10 +83,16 @@ class SlideShow {
                 new BufferedReader(new InputStreamReader(slideFile));
 
         // Read in the slides one-by-one & insert in list.
-        while (bufSlideReader.read()!=-1){
-            currSlide =
-        }
 
+        Slide s = new Slide();
+        String currline =bufSlideReader.readLine();
+        do{
+            currline = bufSlideReader.readLine();
+            System.out.printf(currline+"\n");
+            s.
+
+
+        }while (!Character.isDigit(currline.charAt(0)));
 
 
 
